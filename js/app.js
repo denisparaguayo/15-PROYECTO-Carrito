@@ -5,6 +5,7 @@ const containerCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaCursos = document.querySelector('#lista-cursos');
 let total = 0;
+let cantidadCursos = 0;
 let articulosCarrito = [];
 
 //Listeners
@@ -43,7 +44,6 @@ function eliminarCurso(e) {
 }
 //convertir precio a numero y sumar el valor total del carrito
 function sumarTotal() {
-	let total = 0;
 	articulosCarrito.forEach((curso) => {
 		total += Number(curso.precio) * curso.cantidad;
 	});
@@ -114,7 +114,7 @@ function carritoHtml() {
 	document.querySelector('#total span').textContent = total;
 
 	//recorrer el carrito y contar cantidad de cursos
-	let cantidadCursos = 0;
+
 	articulosCarrito.forEach((curso) => {
 		cantidadCursos += curso.cantidad;
 	});
